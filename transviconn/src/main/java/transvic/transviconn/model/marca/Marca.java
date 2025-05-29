@@ -10,7 +10,7 @@ import transvic.transviconn.model.veiculo.Veiculo;
 
 import java.util.List;
 
-@JsonIgnoreProperties
+
 @Table(name = "Marca")
 @Entity(name = "Marca")
 @AllArgsConstructor
@@ -26,7 +26,7 @@ public class Marca {
 
    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @OneToMany(mappedBy = "marca")
-    private List<Veiculo> veiculo;  // uma marca tem varios veiculos;
+    private List<Veiculo> veiculo;  
 
 
     public String getNome() {
