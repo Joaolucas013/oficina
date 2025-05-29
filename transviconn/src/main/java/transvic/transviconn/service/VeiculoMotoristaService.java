@@ -40,11 +40,9 @@ public class VeiculoMotoristaService {
     public VeiculoMotoristaDto cadastrar(@Valid DadosVeiculos dados) {
         var veiculoMotorista = new VeiculoMotorista();
 
-       // Motorista motorista = motoristaRepository.BuscarPeloId(dados.motoristaId());
-        System.out.println("----dados" + dados.motoristaId());
+     
         Optional<Motorista> motorista = motoristaRepository.findById(dados.motoristaId());
-        System.out.println("-----" + motorista);
-        var veiculo = veiculoRepository.buscarVeiculo(dados.placa());
+      var veiculo = veiculoRepository.buscarVeiculo(dados.placa());
 
         if(motorista.isEmpty()){
             throw new RuntimeException("Motorista não encontrado");
