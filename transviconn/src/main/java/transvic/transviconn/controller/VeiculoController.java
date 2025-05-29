@@ -45,7 +45,7 @@ public class VeiculoController {
 
     @Transactional
     @DeleteMapping("/delete/{placa}")
-    public ResponseEntity deletar(@Valid @PathVariable String placa) {
+    public ResponseEntity deletar(@PathVariable String placa) {
         service.inativar(placa);
         return ResponseEntity.noContent().build();
     }
